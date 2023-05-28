@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { FormGroup,FormBuilder, Validators } from '@angular/forms';
+import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-products',
@@ -8,8 +10,22 @@ import { Route, Router } from '@angular/router';
 })
 export class CreateProductsComponent {
 
-  constructor(private route:Router){
+  form:FormGroup;
+  constructor(private route:Router,
+              private fb:FormBuilder){
 
+                this.form=this.fb.group({
+                  Name:['',Validators.required],
+                  Price:['',Validators.required],
+                  Description:['',Validators.required],
+                  Urls:['',Validators.required]
+                })
+
+  }
+  
+  sendForm(){
+    console.log(this.form.value);
+  
   }
   goBack(){
     this.route.navigate(['']);

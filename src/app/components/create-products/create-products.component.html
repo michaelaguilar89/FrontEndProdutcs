@@ -1,23 +1,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <form >
+            <form [formGroup]="form" (ngSubmit)="sendForm()">
                 <h3 class="mb-4 text-center">Create New Product</h3>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingName" placeholder="name@example.com">
+                    <input type="text" class="form-control" formControlName="Name" id="floatingName" placeholder="name@example.com">
                     <label for="floatingName">Name</label>
                 </div>
             
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingPrice" placeholder="name@example.com">
+                    <input type="number" class="form-control" id="floatingPrice" formControlName="Price" placeholder="name@example.com">
                     <label for="floatingPrice">Price</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingDescription" placeholder="name@example.com">
+                    <input type="text" class="form-control" formControlName="Description" id="floatingDescription" placeholder="name@example.com">
                     <label for="floatingDescription">Description</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingUrl" placeholder="urlExample">
+                    <input type="text" class="form-control" formControlName="Urls" id="floatingUrl" placeholder="urlExample">
                     <label for="floatingUrl">urlExample</label>
                 </div>
                 <div class="mb-3">
