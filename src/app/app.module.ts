@@ -10,6 +10,7 @@ import { GetProductsComponent } from './components/get-products/get-products.com
 import { CreateProductsComponent } from './components/create-products/create-products.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 
 
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
