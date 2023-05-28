@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
-import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
+
 import { Router } from '@angular/router';
+import { timer } from 'rxjs';
+import { Product } from 'src/app/Models/product';
+import { ProductServiceService } from 'src/app/services/product-service.service';
+//import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-products',
@@ -12,7 +16,9 @@ export class CreateProductsComponent {
 
   form:FormGroup;
   constructor(private route:Router,
-              private fb:FormBuilder){
+              private fb:FormBuilder,
+              private service:ProductServiceService
+              ){
 
                 this.form=this.fb.group({
                   Name:['',Validators.required],
@@ -22,9 +28,26 @@ export class CreateProductsComponent {
                 })
 
   }
+
+  ngOnInit(){
+   // this.toastr.success('Hello world!', 'Toastr fun!');
+  }
   
   sendForm(){
     console.log(this.form.value);
+    const product :Product = {
+      Name:this.form.get('Name')?.value,
+      Price:this.form.get('Price')?.value,
+      Description:this.form.get('Description')?.value,
+      Urls:this.form.get('Urls')?.value
+    };
+    this.service.insertProduct(product).subscribe(data=>{
+      console.log(data);
+    });
+    setTimeout(() => {
+      this.route.navigate(['/']);  
+    },1000 );
+    
   
   }
   goBack(){

@@ -11,6 +11,9 @@ import { CreateProductsComponent } from './components/create-products/create-pro
 import { HeaderComponent } from './components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+
+
+//services
 import { ProductServiceService } from './services/product-service.service';
 
 
@@ -24,7 +27,8 @@ import { ProductServiceService } from './services/product-service.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,HttpClientModule
+    AppRoutingModule,
+    ReactiveFormsModule,HttpClientModule,
     
   ],
   providers: [ProductServiceService],
