@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
@@ -11,7 +12,9 @@ export class GetProductsComponent {
 
  
   myResponse:any=[];
-  constructor(public service:ProductServiceService){
+  constructor(public service:ProductServiceService,
+              private router:Router    
+      ){
 
   }
   
@@ -22,5 +25,7 @@ export class GetProductsComponent {
     })
   
   }
-
+  update(id:string){
+    this.router.navigate(['/update/'+id]);
+  }
 }
