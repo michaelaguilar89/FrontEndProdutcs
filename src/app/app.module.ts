@@ -15,6 +15,7 @@ import { HttpClientModule} from '@angular/common/http';
 
 //services
 import { ProductServiceService } from './services/product-service.service';
+import { DetailsComponent } from './components/details/details.component';
 
 
 
@@ -23,7 +24,8 @@ import { ProductServiceService } from './services/product-service.service';
     AppComponent,
     GetProductsComponent,
     CreateProductsComponent,
-    HeaderComponent
+    HeaderComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

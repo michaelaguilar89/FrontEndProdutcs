@@ -28,4 +28,10 @@ export class GetProductsComponent {
   update(id:string){
     this.router.navigate(['/update/'+id]);
   }
+  details(id:string){
+    this.router.navigate(['/details/'+id]);
+  }
+  remove(id:string){
+    this.router.navigate(['/remove:'+id]);
+  }
 }
