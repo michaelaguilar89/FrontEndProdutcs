@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component } from '@angular/core';
+import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
   selector: 'app-get-products',
@@ -8,8 +9,18 @@ import { Component } from '@angular/core';
 })
 export class GetProductsComponent {
 
-  constructor(private http:HttpClient){
+ 
+  myResponse:any=[];
+  constructor(public service:ProductServiceService){
 
-  } 
+  }
+  
+  ngOnInit(){
+    this.service.getProducts().subscribe((data:any) =>{
+      console.log(data)
+      this.myResponse= data;
+    })
+  
+  }
 
 }

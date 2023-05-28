@@ -11,6 +11,7 @@ import { CreateProductsComponent } from './components/create-products/create-pro
 import { HeaderComponent } from './components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { ProductServiceService } from './services/product-service.service';
 
 
 
@@ -26,7 +27,7 @@ import { HttpClientModule} from '@angular/common/http';
     AppRoutingModule,ReactiveFormsModule,HttpClientModule
     
   ],
-  providers: [],
+  providers: [ProductServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
