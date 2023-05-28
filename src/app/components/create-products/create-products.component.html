@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <button class="btn btn-secondary " (click)="goBack()">Go Back</button>
-                    <button class="btn btn-success float-end">Save</button>
+                    <button class="btn btn-success float-end" [disabled]="form.invalid" >Save</button>
                 </div>
                 
             </form>
