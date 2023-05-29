@@ -30,5 +30,9 @@ export class ProductServiceService {
 return this.http.get<Response>(this.url+Id)
 
   }
+
+  removeProduct(Id:string):Observable<Response>{
+    return this.http.delete<Response>(this.url+ Id)
+  }
  
 }
