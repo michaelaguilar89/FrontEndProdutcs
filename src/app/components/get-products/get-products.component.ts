@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/Models/product';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
@@ -28,23 +29,26 @@ export class GetProductsComponent {
 
   }
 
-  sendTitle(title:string){
-    this.service.title=title;
+  openCreate(){
+    this.service.title='Create Product';
+    this.service.butonAction='Save';
   }
 
-  update(Id:string){
+  update(Id:string ,product:Product){
     this.service.id=Id;
-    this.sendTitle('Update Product')
+    this.service.title='Update Product';
+    this.service.butonAction='Update';
+    this.service.update(product);
     this.router.navigate(['/update/'+Id]);
   }
   details(Id:string){
     this.service.id=Id;
-    this.sendTitle('Product Details');
+    this.service.title='Product Details';
     this.router.navigate(['/details/'+Id]);
   }
   remove(Id:string){
     this.service.id=Id;
-    this.sendTitle('Delete Product');
+    this.service.title='Delete Product';
     this.router.navigate(['/remove/'+Id]);
   }
 }
