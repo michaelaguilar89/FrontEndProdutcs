@@ -11,6 +11,8 @@ export class ProductServiceService {
 
   //myResponse:any;
   url:string='https://localhost:5001/api/Products/';
+  title='';
+  id='';
   constructor(private http:HttpClient){
 
   } 
@@ -24,4 +26,9 @@ export class ProductServiceService {
     return this.http.post<Product>(this.url,product);
 
   }
+  getProductDetails(Id:string):Observable<Response>{
+return this.http.get<Response>(this.url+Id)
+
+  }
+ 
 }

@@ -1,1 +1,25 @@
-<p>details works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-5 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>{{service.title}}</h2>
+                </div>
+                <div class="card-body text-center">
+                     
+                     <p> Id : {{response.result.id}}</p>   
+                     <p> Name :{{response.result.name}}</p>
+                     <p> Price : {{response.result.price}}</p>
+                     <p> Description : {{response.result.description}}</p>
+                     <p> Urls : {{response.result.urls}}</p>
+                    
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success" routerLink="/" >Go Back</button>
+                    <button class="btn btn-danger float-end" *ngIf="service.title=='Delete Product'">Remove </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

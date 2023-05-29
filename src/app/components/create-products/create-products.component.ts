@@ -14,10 +14,11 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 })
 export class CreateProductsComponent {
 
+
   form:FormGroup;
   constructor(private route:Router,
               private fb:FormBuilder,
-              private service:ProductServiceService
+              public service:ProductServiceService
               ){
 
                 this.form=this.fb.group({

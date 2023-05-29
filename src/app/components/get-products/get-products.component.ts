@@ -24,14 +24,27 @@ export class GetProductsComponent {
       this.myResponse= data;
     })
   
+   
+
   }
-  update(id:string){
-    this.router.navigate(['/update/'+id]);
+
+  sendTitle(title:string){
+    this.service.title=title;
   }
-  details(id:string){
-    this.router.navigate(['/details/'+id]);
+
+  update(Id:string){
+    this.service.id=Id;
+    this.sendTitle('Update Product')
+    this.router.navigate(['/update/'+Id]);
   }
-  remove(id:string){
-    this.router.navigate(['/remove:'+id]);
+  details(Id:string){
+    this.service.id=Id;
+    this.sendTitle('Product Details');
+    this.router.navigate(['/details/'+Id]);
+  }
+  remove(Id:string){
+    this.service.id=Id;
+    this.sendTitle('Delete Product');
+    this.router.navigate(['/remove/'+Id]);
   }
 }
