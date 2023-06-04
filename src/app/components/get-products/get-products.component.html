@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-10 mx-auto" >
+         
             <table class="table mt-5" style="background-color: whitesmoke;" >
                 <thead >
                   <tr>
@@ -17,7 +18,7 @@
                 </thead>
                 <tbody *ngFor="let element of myResponse.result">
                   <tr>
-                   
+                    
                     <td>{{element.name}}</td>
                     <td>{{element.price}}</td>
                     <td>{{element.description}}</td>
@@ -30,6 +31,10 @@
                   </tr>
                            </tbody>
               </table>
+
+              <div *ngIf="myResponse.result==null" class="spinner-border col-lg-2 text-primary mx-5 my-5" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
         </div>
     </div>
 </div>

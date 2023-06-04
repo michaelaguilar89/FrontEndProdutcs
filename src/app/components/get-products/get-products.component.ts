@@ -20,10 +20,16 @@ export class GetProductsComponent {
   }
   
   ngOnInit(){
+    
+     setTimeout(()=>{
+      console.log('Get data from server ');
+      
     this.service.getProducts().subscribe((data:any) =>{
+      
       console.log(data)
       this.myResponse= data;
     })
+     },2000);
   
    
 

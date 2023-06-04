@@ -31,6 +31,7 @@ export class ProductServiceService {
    
   getProducts(){
    return this.http.get(this.url);
+  
    
 }
   insertProduct(product :Product):Observable<Product>{
